@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
 	def create
-		@post = @user.create_post(post_params)
+		@post = @user.create_user(post_params)
 
 		if @post.save
 			redirect_to :index
