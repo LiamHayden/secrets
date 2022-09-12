@@ -1,12 +1,9 @@
 <%= form_with model: @post, data: { turbo: false } do |form| %>
-	<%= form.label "Username:" %>
-	<%= form.text_field :username %>
+	<%= form.label "Title:" %>
+	<%= form.text_field :title %>
 
-	<%= form.label "Email:" %>
-	<%= form.email_field :email, placeholder: "example@email.com" %>
-
-	<%= form.label "Password:" %>
-	<%= form.password_field :password %>
+	<%= form.label "Body:" %>
+	<%= form.text_field :body %>
 
 	<%= form.submit "Submit" %>
 <% end %>
