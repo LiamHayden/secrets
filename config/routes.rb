@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   
   root "posts#index"
   get '/posts/index'
+  get '/users/sign_in'
   resources :posts, only: [:new, :create, :index]
 end
