@@ -1,4 +1,11 @@
+<% if user_signed_in? %>
+  <%= link_to "Make a post", "/posts/new" %>
+<% else %>
+  <%= link_to "Sign in to make a post", "/users/sign_in" %>
+<% end %>
+
 <h1>Posts</h1>
+
 <% @posts.each do |post| %>
   <% if user_signed_in? %>
     <p>User: <%= post.user.username %></p>
@@ -8,5 +15,3 @@
   <p>Title: <%= post.title %></p>
 	<p>Body: <%= post.body %></p><br>
 <% end %>
-
-<%= link_to "Make a post", "/posts/new" %>
