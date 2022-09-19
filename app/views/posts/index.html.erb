@@ -1,17 +1,19 @@
-<% if user_signed_in? %>
-  <%= link_to "Make a post", "/posts/new" %>
-<% else %>
-  <%= link_to "Sign in to make a post", "/users/sign_in" %>
-<% end %>
+<h1>Posts</h1> <%# replace this with navbar %>
 
-<h1>Posts</h1>
-
-<% @posts.each do |post| %>
-  <% if user_signed_in? %>
-    <p>User: <%= post.user.username %></p>
-  <% else %>
-    <strong>Sign in to see username</strong>
-  <% end %>
-  <p>Title: <%= post.title %></p>
-	<p>Body: <%= post.body %></p><br>
-<% end %>
+<div class="container text-center">
+  <div class="d-flex flex-row justify-content-between mw-100">
+    <div class="w-25"> <%# make fixed %>
+      <% if user_signed_in? %>
+        <%= link_to "Make a post", "/posts/new" %>
+      <% else %>
+        <%= link_to "Sign in to make a post", "/users/sign_in" %>
+      <% end %>
+    </div>
+    <div class="w-50">
+      <%= render "feed" %>
+    </div>
+    <div class="w-25"> <%# make fixed %>
+      <p>Github</p>
+    </div>
+  </div>
+</div>
