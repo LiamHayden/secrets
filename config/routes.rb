@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root "posts#index"
   get '/posts/index'
   get '/users/sign_in'
+  get '/users/sign_out'
   resources :posts, only: [:new, :create, :index]
 end
