@@ -1,0 +1,13 @@
+<%= form_for Post.new, data: { turbo: false } do |form| %>
+	<%= form.label "Title:" %>
+	<%= form.text_field :title %>
+
+	<%= form.label "Body:" %>
+	<%= form.text_field :body %>
+
+	<% if user_signed_in? %>
+		<%= form.submit "Submit" %>
+	<% else %>
+		<%= form.submit "Sign in to post" %>
+	<% end %>
+<% end %>
