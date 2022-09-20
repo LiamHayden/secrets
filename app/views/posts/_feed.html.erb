@@ -1,6 +1,6 @@
 <div class=""> <%#d-flex justify-content-center flex-column text-center mw-100%>
 	<% @posts.each do |post| %>
-		<div class="mt-3 pt-3 border border-light">
+		<div class="mt-3 pt-3 border border-light shadow-sm bg-body rounded">
 			<% if user_signed_in? %>
 				<p>User: <%= post.user.username %></p>
 			<% else %>
